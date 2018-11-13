@@ -79,7 +79,6 @@ public class Controller implements Initializable {
 
     public void connect() {
         try {
-           // socket = new Socket(SERVER_IP, SERVER_PORT);
 
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
@@ -154,9 +153,9 @@ public class Controller implements Initializable {
     }
 
     public void sendAuthMsg() {
-      //  if (socket == null || socket.isClosed()) {
+
             connect();
-       // }
+
         try {
             if (loginField.getText().isEmpty() || passField.getText().isEmpty()) {
                 showAlert("Указаны неполные данные авторизации");
@@ -205,7 +204,7 @@ public class Controller implements Initializable {
 
     public void disconnectByTimer () {
 
-        long timeout = 12000;//поставил таймаут короче 12сек для тестирования
+        long timeout = 15000;//поставил таймаут короче 15сек для тестирования
         Timer timer = new Timer();
 
             timer.schedule(new TimerTask() {

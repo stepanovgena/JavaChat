@@ -7,8 +7,6 @@ public class AuthService {
     private Statement stmt;
 
     public void connect() throws ClassNotFoundException, SQLException{
-        // jdbc mysql class.forname
-        //jdbc mysql url
 
         Class.forName("org.sqlite.JDBC");
         connection = DriverManager.getConnection("jdbc:sqlite:main.db");
